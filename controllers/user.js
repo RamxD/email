@@ -2,6 +2,15 @@
 
 const User = require('../models/user')
 const service = require('../services')
+const nodemailer = require('nodemailer');
+
+let Transport = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: '171106@ids.upchiapas.edu.mx',
+        pass: 'ear52761385132897xd1388'
+    }
+});
 
 function signUp (req, res) {
   const user = new User({
